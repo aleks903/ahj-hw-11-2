@@ -5,8 +5,8 @@ import AddMsg from './AddMsg.js';
 
 const elMessages = document.querySelector('.incom-messages');
 const addMsg = new AddMsg(elMessages);
-// const url = 'https://heroku-ahj-11-2.herokuapp.com/posts';
-const url = 'http://localhost:7070/posts';
+const url = 'https://heroku-ahj-11-2.herokuapp.com/posts';
+// const url = 'http://localhost:7070/posts';
 
 function loadPostComments(postsData) {
   return new Observable((observer) => {
