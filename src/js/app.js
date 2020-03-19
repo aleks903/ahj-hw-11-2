@@ -5,8 +5,8 @@ import AddMsg from './AddMsg.js';
 
 const elMessages = document.querySelector('.incom-messages');
 const addMsg = new AddMsg(elMessages);
-const url = 'https://heroku-ahj-11-2.herokuapp.com/posts';
-// const url = 'http://localhost:7070/posts';
+// const url = 'https://heroku-ahj-11-2.herokuapp.com/posts';
+const url = 'http://localhost:7070/posts';
 
 function loadPostComments(item) {
   // console.log(item);
@@ -25,7 +25,7 @@ function loadPostComments(item) {
     .pipe(
       pluck('data'),
       catchError(() => of([])),
-      concatMap((posts) => zip(...posts.map(loadPostComments))),
+      switchMap((posts) => zip(...posts.map(loadPostComments))),
     )
     .subscribe((result) => {
       addMsg.addMessages(result);
