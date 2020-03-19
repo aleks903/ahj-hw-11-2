@@ -64,6 +64,8 @@ export default class AddMsg {
   }
 
   addMessages(itemPost) {
-    this.addItemMsg(itemPost);
+    for (const item of itemPost) {
+      this.addItemMsg(item);
+    }
   }
 }
