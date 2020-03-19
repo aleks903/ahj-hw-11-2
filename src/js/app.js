@@ -1,6 +1,6 @@
 import { ajax } from 'rxjs/ajax';
-import { pluck, catchError, switchMap, concatMap, map, flatMap } from 'rxjs/operators';
-import { Observable, of, zip, combineLatest } from 'rxjs';
+import { pluck, catchError, switchMap } from 'rxjs/operators';
+import { Observable, of, zip } from 'rxjs';
 import AddMsg from './AddMsg.js';
 
 const elMessages = document.querySelector('.incom-messages');
